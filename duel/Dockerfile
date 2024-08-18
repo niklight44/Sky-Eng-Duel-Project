@@ -14,7 +14,7 @@ RUN npm run build
 # Stage-2
 FROM nginx:1.25.2-alpine-slim
 
-COPY --from=builder /app/dist /usr/share/nginx/duel/html
+COPY --from=builder /app/dist /usr/share/nginx/html
 
 EXPOSE 80
 
