@@ -4,6 +4,6 @@ services:
       context: ./duel
       dockerfile: Dockerfile
 
-    container_name: frontend
+    container_name: frontend_duel
     ports:
       - "81:80"
