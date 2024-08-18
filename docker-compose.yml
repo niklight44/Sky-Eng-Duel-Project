@@ -1,8 +1,8 @@
 services:
   frontend:
     build:
-      context: .
-      dockerfile: duel/Dockerfile
+      context: ./duel
+      dockerfile: Dockerfile
 
     container_name: frontend
     ports:
