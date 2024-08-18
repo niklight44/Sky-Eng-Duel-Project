@@ -7,7 +7,7 @@ COPY package.json .
 RUN chown -R root /app
 RUN npm install
 
-COPY . .
+COPY .. .
 
 RUN npm run build
 
