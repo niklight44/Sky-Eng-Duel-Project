@@ -1,5 +1,5 @@
 services:
-  frontend:
+  frontend_duel:
     build:
       context: ./duel
       dockerfile: Dockerfile
