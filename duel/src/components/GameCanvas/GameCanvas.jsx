@@ -36,7 +36,7 @@ const GameCanvas = () => {
             smallBalls.push({
                 x: ball.x + (ball.color === "red" ? ball.radius : -ball.radius),
                 y: ball.y,
-                radius: 5,
+                radius: 10,
                 speedX: (ball.color === "red" ? redSpeed : -blueSpeed) * 4,
                 color: ballColors[ball.color],  // Используем выбранный цвет для стреляющих шариков
                 originBall: ball
