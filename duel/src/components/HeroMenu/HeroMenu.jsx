@@ -1,3 +1,5 @@
+import "./HeroMenu.css";
+
 // Компонент для выбора цвета шаров
 const HeroMenu = ({ clickPos, onChangeColor, onClose }) => (
     <div className="menu" style={{ top: clickPos.y, left: clickPos.x }}>

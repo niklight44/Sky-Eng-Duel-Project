@@ -23,7 +23,7 @@ const GameCanvas = () => {
 
         // Начальные параметры для мячей
         const balls = [
-            { x: 100, y: 100, radius: 30, color: "red", dy: redSpeed },
+            { x: 200, y: 100, radius: 30, color: "red", dy: redSpeed },
             { x: 800, y: 200, radius: 30, color: "blue", dy: blueSpeed }
         ];
 
@@ -36,8 +36,8 @@ const GameCanvas = () => {
             smallBalls.push({
                 x: ball.x + (ball.color === "red" ? ball.radius : -ball.radius),
                 y: ball.y,
-                radius: 10,
-                speedX: (ball.color === "red" ? redSpeed : -blueSpeed) * 2,
+                radius: 5,
+                speedX: (ball.color === "red" ? redSpeed : -blueSpeed) * 4,
                 color: ballColors[ball.color],  // Используем выбранный цвет для стреляющих шариков
                 originBall: ball
             });
@@ -52,8 +52,8 @@ const GameCanvas = () => {
                 ball.y += ball.dy;  // Обновление позиции мяча по оси Y
 
                 // Проверка границ canvas и изменение направления мяча
-                if (ball.y + ball.radius > canvas.height) {
-                    ball.y = canvas.height - ball.radius;
+                if (ball.y + ball.radius > canvas.height * 0.9) {
+                    ball.y = canvas.height * 0.9 - ball.radius;
                     ball.dy = -ball.dy;
                 } else if (ball.y - ball.radius < 0) {
                     ball.y = ball.radius;
@@ -182,19 +182,22 @@ const GameCanvas = () => {
     };
 
     return (
-        <div>
+        <div className="arcade-machine">
+            <div className="logo">Magic duel</div>
+            <div className="top-trapezoid"></div>
             <canvas
                 ref={canvasRef}
                 width={1000}
                 height={800}
             />
-            <Scoreboard redScore={redScore} blueScore={blueScore} />  // Отображение счета
+            <Scoreboard redScore={redScore} blueScore={blueScore} />
+            <div className="bottom-trapezoid"></div>
             <Controls
                 redSpeed={redSpeed} setRedSpeed={setRedSpeed}
                 redShootInterval={redShootInterval} setRedShootInterval={setRedShootInterval}
                 blueSpeed={blueSpeed} setBlueSpeed={setBlueSpeed}
                 blueShootInterval={blueShootInterval} setBlueShootInterval={setBlueShootInterval}
-            />  // Управление параметрами мячей
+            />
             {selectedBall && (
                 <HeroMenu
                     clickPos={clickPos}

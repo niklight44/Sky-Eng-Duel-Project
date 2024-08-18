@@ -1,3 +1,41 @@
+.arcade-machine{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo{
+    width: 110%;
+    height: 100px !important;
+    line-height: 100px;
+    padding: 0 !important;
+    background-color: #000;
+    border: 5px solid darkgrey;
+    font-size: 3rem;
+}
+
+.top-trapezoid {
+    border-top: 50px solid #555;
+    border-left: 55px solid transparent;
+    border-right: 55px solid transparent;
+    height: 0;
+    width: 100%;
+}
+
 canvas{
     border: 1px solid #000;
+    border-radius: 15px;
+    box-shadow: 0 0 15px #000;
+    background-image: url('https://media.istockphoto.com/id/1254770048/vector/arcade-machine-screen-retro-vector-background.jpg?s=612x612&w=0&k=20&c=niQGJfkyTo7ewsfV3J4EBngR2goZ4qEpgQXAzr3kheE=');
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+    cursor: url("./cursor.png"), auto;
+}
+
+.bottom-trapezoid {
+    width: 120%;
+    height: 80px;
+    background-image: url('https://t3.ftcdn.net/jpg/04/69/28/58/360_F_469285845_ganfZEVY388wcbAn005zqC72v3p9aCVR.jpg');
+    background-size: cover;
+    clip-path: polygon(9% 0, 91% 0%, 100% 100%, 0 100%);
 }

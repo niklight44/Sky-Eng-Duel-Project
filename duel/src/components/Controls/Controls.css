@@ -1,0 +1,11 @@
+.controls{
+    width: 120%;
+    height: 150px;
+    display: flex;
+    background-color: grey;
+}
+
+.controls section{
+    width: 40%;
+    text-align: left;
+}
