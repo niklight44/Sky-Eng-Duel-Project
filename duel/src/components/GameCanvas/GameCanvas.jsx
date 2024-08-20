@@ -68,12 +68,21 @@ const GameCanvas = () => {
                     ball.dy = -ball.dy;
                 }
 
+                // Glow Эффект
+                const glowColor = ball.color === "red" ? "rgba(255, 0, 0, 0.7)" : "rgba(0, 0, 255, 0.7)";
+                ctx.shadowBlur = 30;
+                ctx.shadowColor = glowColor;
+
                 // Отрисовка мяча на canvas
                 ctx.beginPath();
                 ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
                 ctx.fillStyle = ball.color;
                 ctx.fill();
                 ctx.closePath();
+
+                // Сброс параметров для предотвращения влияния на другие элементы
+                ctx.shadowBlur = 0;
+                ctx.shadowColor = "transparent";
             });
 
             // Обновление и отрисовка маленьких мячей
